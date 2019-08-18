@@ -1,0 +1,106 @@
+    * {
+    box-sizing: border-box
+    }
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Dosis', sans-serif;
+    line-height: 1.6;
+    color: #666;
+    background: #F6F6F6;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cep{
+    width: 110px;
+}
+#estado{
+    width: 50px;
+}
+#cidade{
+    width: 170px;
+}
+#bairro{
+    width: 150px;
+}
+#num{
+    width: 80px;
+}
+#comp{
+    padding-top: 10px;
+    width: 100px;
+}
+#emailHelp{
+    padding-bottom: 10px;
+}
+#exampleInputNome{
+    width: 230px;
+
+}
+#exampleInputEmail1{
+    width: 230px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+#exampleInputIdade1{
+    width: 100px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+#exampleInputTamanho1{
+    width: 110px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+#exampleInputRaça1{
+    width: 200px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+#exampleInputPassword1{
+    width: 200px;
+    padding-bottom: 10px;
+}
+#senhalHelpTamanho{
+    padding-bottom: 10px;
+}
+#exampleInputSexo1{
+    width: 110px;
+}
+#exampleFormControlTextarea1{
+    width: 500px; 
+    padding-bottom: 10px; 
+}
+.form1 {
+    padding-top: 50px;
+    padding-left: 100px;
+}
+.form{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.button{
+    width: 50px;
+    padding: 100px;
+}
+#textArea{
+    padding-top: 10px;
+}
+input{
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+footer {
+    margin-bottom: 0px !important;
+    background: rgba(29, 28, 28, 0.815);
+    overflow-x: hidden;
+    margin-top: 40px;
+    padding: 15px 100px 0px ;
+}
