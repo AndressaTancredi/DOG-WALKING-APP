@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PetSchema = new Schema({ 
-  nome: { type: String },
-  raca: { type: String},
-  idade: { type: Number},
-  tamanho: { type: String},
-  sexo: { type: String},
-  descricao: { type: String},
+  nome: { type: String, required: true },
+  raca: { type: String, required: true },
+  idade: { type: Number },
+  tamanho: { type: String, required: true },
+  sexo: { type: String, required: true },
+  descricao: { type: String }
 });
 
 const ClienteSchema = new Schema({
@@ -31,12 +31,12 @@ const PasseadorSchema = new Schema({
   email: { type: String, required: true },
   senha: { type: String, required: true },
   cep: { type: Number, required: true },
-  estado: { type: String, required: true },
-  cidade: { type: String, required: true },
-  bairro: { type: String, required: true },
-  rua: { type: String, required: true },
-  numero: { type: Number, required: true },
-  complemento: { type: String, required: true },
+  estado: { type: String },
+  cidade: { type: String },
+  bairro: { type: String },
+  rua: { type: String },
+  numero: { type: Number },
+  complemento: { type: String }
 })
 
 const ClienteModel = mongoose.model("clientes", ClienteSchema);
