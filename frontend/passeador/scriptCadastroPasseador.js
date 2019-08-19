@@ -5,7 +5,7 @@ cep.addEventListener("focusout", () =>{
     console.log("FOCUS OUT")
 
     let cepVal = cep.value
-
+    
     fetch(`https://viacep.com.br/ws/${cepVal}/json`)
     .then((response) =>{
         return response.json();
@@ -48,23 +48,31 @@ botao.addEventListener('click',function(evento){
         return
     }
     mensagemSenha.textContent = 'O email '+ email.value +' foi cadastrado com sucesso!'
-    event.defaultPrevented();
     
-})
+    //clicar no botão e ir para a proxima pagina
 
-//clicar no botão e ir para a proxima pagina
+    /* Login
+    Email regras:
+    1- Não pode ser vazio
+    2- Colocar foco na cai de email
+    3- Não pode começar com @
 
-/* Login
-Email regras:
-1- Não pode ser vazio
-2- Colocar foco na cai de email
-3- Não pode começar com @
+    Senha regras:
+    1- Não pode ser vazio nem menor que 6 digitos */
 
-Senha regras:
-1- Não pode ser vazio nem menor que 6 digitos */
+    //Post cadastro passeadores:
+    let nome = document.getElementById("exampleInputNome").value;
+    let email2 = document.getElementById("exampleInputEmail1").value;
+    let senha2 = document.getElementById("exampleInputPassword1").value;
+    let cep = document.getElementById("cep").value; 
+    let estado = document.getElementById("estado").value; 
+    let cidade = document.getElementById("cidade").value; 
+    let bairro = document.getElementById("bairro").value; 
+    let endereco = document.getElementById("endereco").value; 
+    let numero = document.getElementById("num").value; 
+    let complemento = document.getElementById("comp").value; 
 
-//Post cadastro clientes:
-fetch(`http://localhost:8080/salas/adicionarperguntas/${salaName}`,  {
+    fetch(`http://localhost:3000/passeador`,  {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -72,17 +80,26 @@ fetch(`http://localhost:8080/salas/adicionarperguntas/${salaName}`,  {
         },
         body: JSON.stringify({
             'nome': nome,
-            'perguntas': pergunta,
+            'email': email2,
+            'senha': senha2,
+            'cep': cep,
+            'estado': estado,
+            'cidade': cidade,
+            'bairro': bairro,
+            'rua': endereco,
+            'numero': numero,
+            'complemento': complemento
         })  
     }) 
     .then((response) => {
-        console.log(nome,pergunta);
+        console.log(nome);
         console.log(response)
     })
     .then((data) => {
         console.log(data);
-        window.location.href=`./cadastroDoguinhos.html`
+        //window.location.href=`./cadastroDoguinhos.html`
     })
     .catch((erro) => {
         console.log(erro)
     })
+})

@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PetSchema = new Schema({ 
-  nome: { type: String, required: true },
-  raca: { type: String, required: true },
+  nome: { type: String },
+  raca: { type: String },
   idade: { type: Number },
-  tamanho: { type: String, required: true },
-  sexo: { type: String, required: true },
+  tamanho: { type: String },
+  sexo: { type: String },
   descricao: { type: String }
 });
 
@@ -22,7 +22,7 @@ const ClienteSchema = new Schema({
   rua: { type: String },
   numero: { type: Number },
   complemento: { type: String },
-  pets: [PetSchema]
+  pet: [PetSchema]
 });
 
 const PasseadorSchema = new Schema({

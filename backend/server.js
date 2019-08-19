@@ -5,8 +5,6 @@ const servidor = express()
 const controller = require('./PasseiosController')
 const PORT = 3000
 
-servidor.use(cors())
-
 servidor.get('/', (request, response) => {
   response.send('Olá, Doguinhos!')
 })
@@ -15,19 +13,20 @@ servidor.disable('etag'); //Verificar etag
 servidor.use(cors())
 servidor.use(bodyParser.json())
 
-//GET de Clientes
+//GET de Clientes - Funcionando BACK e FRONT
 servidor.get('/clientes', async (request, response) => {
   controller.getClientes()
     .then(cliente => response.send(cliente))
 })
 
-//POST de Clientes
+//POST de Clientes - Funcionando BACK e FRONT
 servidor.post('/clientes', (request, response) => {
-  console.log("Cliente Cadastrado!");
+  
   controller.addCliente(request.body)
     .then(cliente => {
       const _id = cliente._id
       response.send(_id) 
+      console.log("Cliente Cadastrado!");
     })
     .catch(error => {
       if(error.name === "ValidationError"){
@@ -48,10 +47,10 @@ servidor.get('/clientes/:nomeDoCliente',(request, response) => {
       } else {
         response.sendStatus(500)
       }
-    })
-    })
+  })
+})
 
-//POST de Pets
+//POST de Pets dentro do cliente
 servidor.post('/clientes/adicionarpet/:clienteName', (request, response) => {
   const clienteName = request.params.clienteName
   controller.addPet(clienteName, request.body)
@@ -75,7 +74,7 @@ servidor.get('/pets', async (request, response) => {
     .then(pets => response.send(pets))
 })
 
-//POST Passeador
+//POST Passeador - Funcionando BACK e FRONT
 servidor.post('/passeador', (request, response) => {
   console.log("Cadastro Criado!");
   controller.addPasseador(request.body)
@@ -90,6 +89,12 @@ servidor.post('/passeador', (request, response) => {
         response.sendStatus(500)
       }
     })
+})
+
+//GET de Passeadores - Funcionando BACK
+servidor.get('/passeadores', async (request, response) => {
+  controller.getPasseadores()
+    .then(passeadores => response.send(passeadores))
 })
 
 servidor.listen(PORT)

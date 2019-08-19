@@ -18,10 +18,10 @@ const getByName = (nomeDoCliente) => {
   return ClienteModel.findOne({nomeCliente: nomeDoCliente })
   }
 
-const addPet= async (clienteName, pet) => {
+const addPet = async (clienteName, pet) => {
   const passeio = await getByName(clienteName)
   const novoPet = new PetModel(pet)
-  passeio.pets.push(novoPet)
+  passeio.pet.push(novoPet)
   return passeio.save()
 }
 
@@ -36,11 +36,18 @@ const addPasseador = (passeador) => {
   return novoPasseador.save()
 }
 
+const getPasseadores = () => {
+  return PasseadorModel.find((error, passeadores) => {
+    return passeadores
+  })
+}
+
 module.exports = {
   getClientes,
   addCliente,
   getByName,
   addPet,
   getPet,
-  addPasseador
+  addPasseador,
+  getPasseadores
 }
