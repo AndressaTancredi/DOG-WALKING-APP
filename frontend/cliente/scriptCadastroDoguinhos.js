@@ -1,5 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
-const nomeDoCliente = urlParams.get('nome');
+const nomeDoCliente = urlParams.get('name');
 let clienteName
 
 //Fetch que pega o cliente no banco:
@@ -29,7 +29,7 @@ button.addEventListener("click", (evento) => {
     let descricao = document.getElementById("exampleFormControlTextarea1").value;
 
 
-    fetch(`http://localhost:8080/clientes/adicionarpet/${clienteName}`,  {
+    fetch(`http://localhost:3000/clientes/adicionarpet/${clienteName}`,  {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

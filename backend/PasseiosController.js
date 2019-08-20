@@ -15,7 +15,7 @@ const addCliente = (cliente) => {
 }
 
 const getByName = (nomeDoCliente) => {
-  return ClienteModel.findOne({nomeCliente: nomeDoCliente })
+  return ClienteModel.findOne({nome: nomeDoCliente })
   }
 
 const addPet = async (clienteName, pet) => {

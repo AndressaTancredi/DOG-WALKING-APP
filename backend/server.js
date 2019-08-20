@@ -3,7 +3,6 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const servidor = express()
 const controller = require('./PasseiosController')
-const bcrypt = require ('bcryptjs')
 const PORT = 3000
 
 servidor.get('/', (request, response) => {
@@ -38,7 +37,7 @@ servidor.post('/clientes', (request, response) => {
     })
 })
 
-//GET de Clientes por Nome
+//GET de Clientes por Nome - Funcionando BACK
 servidor.get('/clientes/:nomeDoCliente',(request, response) => {
   controller.getByName(request.params.nomeDoCliente)
     .then(passeio => response.send(passeio))
@@ -51,23 +50,7 @@ servidor.get('/clientes/:nomeDoCliente',(request, response) => {
   })
 })
 
-//POST de Pets dentro do cliente
-servidor.post('/pet', (request, response) => {
-  console.log("Cadastro Criado!");
-  controller.addPasseador(request.body)
-    .then(passeio => {
-      const _id = passeio._id
-      response.send(_id) 
-    })
-    .catch(error => {
-      if(error.name === "ValidationError"){
-        console.log(error);
-      } else {
-        response.sendStatus(500)
-      }
-    })
-})
-
+//POST de Pets dentro do cliente - Funcionando BACK e FRONT
 servidor.post('/clientes/adicionarpet/:clienteName', (request, response) => {
   const clienteName = request.params.clienteName
   controller.addPet(clienteName, request.body)
@@ -115,4 +98,4 @@ servidor.get('/passeadores', async (request, response) => {
 })
 
 servidor.listen(PORT)
-console.info(` Servidor rodando na porta ${PORT}`)
+console.info(`Servidor rodando na porta ${PORT}`)
