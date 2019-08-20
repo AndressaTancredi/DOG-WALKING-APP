@@ -91,7 +91,7 @@ botao.addEventListener('click',function(evento){
         })
         .then((data) => {
             console.log(data);
-            window.location.href=`./cadastroDoguinhos.html`
+            window.location.href=`cadastroDoguinhos.html?name=${nome}`
         })
         .catch((erro) => {
             console.log(erro)
