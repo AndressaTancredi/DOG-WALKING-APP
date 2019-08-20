@@ -1,5 +1,5 @@
 const { connect } = require('./PasseiosRepository')
-const  {ClienteModel, PetModel, PasseadorModel } = require('./PasseiosSchema')
+const  { ClienteModel, PetModel, PasseadorModel } = require('./PasseiosSchema')
 
 connect() //Conecta no mongoDB
 
