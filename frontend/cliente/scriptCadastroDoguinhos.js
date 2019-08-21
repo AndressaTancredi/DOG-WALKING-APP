@@ -49,7 +49,7 @@ button.addEventListener("click", (evento) => {
     })
     .then((data) => {
         console.log(data);
-        //Posso direcionar para área de perfil do cliente : window.location.href=`./cadastroDoguinhos.html`
+        window.location.href=`./clientePerfil.html`
     })
     .catch((erro) => {
         console.log(erro)

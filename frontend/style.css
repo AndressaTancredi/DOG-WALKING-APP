@@ -132,7 +132,8 @@ header .container .col-md-7 p {
   padding: 100px;
 }
 footer {
-  margin-bottom: 0px !important;
+  
+  margin-bottom: 0px; 
   background: rgba(29, 28, 28, 0.815);
   overflow-x: hidden;
   margin-top: 40px;
