@@ -25,11 +25,17 @@ const addPet = async (clienteName, pet) => {
   return passeio.save()
 }
 
-const getPet = () => {
-  return PetModel.find((error, pet) => {
-    return pet
-  })
+const removePet = async (clienteName, _id) => {
+  const passeio = await getByName(clienteName)
+  PetModel.findByIdAndDelete(_id)
+  passeio.pet.remove(_id)
+  return passeio.save()
+
 }
+
+/* const remove = (id) => {
+  return PetModel.findByIdAndDelete(id)
+} */
 
 const addPasseador = (passeador) => {
   const novoPasseador = new PasseadorModel(passeador)
@@ -47,7 +53,7 @@ module.exports = {
   addCliente,
   getByName,
   addPet,
-  getPet,
+  removePet,
   addPasseador,
   getPasseadores
 }

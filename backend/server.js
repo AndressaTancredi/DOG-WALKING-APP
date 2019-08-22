@@ -68,10 +68,26 @@ servidor.post('/clientes/adicionarpet/:clienteName', (request, response) => {
   })
 }) 
 
-//GET de Pets
-servidor.get('/pets', async (request, response) => {
-  controller.getPets()
-    .then(pets => response.send(pets))
+//DELETE Pet - Funcionando 
+servidor.delete('/clientes/removerpet/:clienteName', (request, response) => {
+  const clienteName = request.params.clienteName
+  controller.removePet(clienteName, request.body)
+    .then(pets=> {
+      const nomeDoCliente = pets.nomeDoCliente
+      response.remove({ nomeDoCliente })
+      if(pets === null || pets === undefined){ // if(!pergunta) 
+        response.sendStatus(404) // not found
+      } else {
+        response.sendStatus(204)
+      }
+    })
+    .catch(error => {
+      if(error.name === "CastError"){
+        response.sendStatus(400) //bad request
+      } else {
+        response.sendStatus(500)
+      } 
+    })
 })
 
 //POST Passeador - Funcionando BACK e FRONT

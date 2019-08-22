@@ -11,39 +11,36 @@ fetch(`http://localhost:3000/clientes/${nomeDoCliente}`)
 
         data.pet.forEach(pet =>{
 
+            let nome = document.querySelector('h5')
+            nome.innerHTML = nomeDoCliente;
+
             let card = document.createElement("div");
             card.setAttribute("class", "card");
             pets.appendChild(card);
         
-            let titulo = document.createElement("h1");
-            titulo.innerHTML = data.pet.nome;
+            let titulo = document.createElement("h4");
+            titulo.textContent = pet.nome;
             card.appendChild(titulo);
         
             let petRaca = document.createElement("p");
-            petRaca.innerHTML = data.pet.raca;
+            petRaca.innerHTML = pet.raca;
             card.appendChild(petRaca);
 
             let petIdade = document.createElement("p");
-            petIdade.innerHTML = data.pet.idade;
+            petIdade.innerHTML = pet.idade;
             card.appendChild(petIdade);
 
             let petTamanho = document.createElement("p");
-            petTamanho.innerHTML = data.pet.tamanho;
+            petTamanho.innerHTML = pet.tamanho;
             card.appendChild(petTamanho);
         
             let petSexo = document.createElement("p");
-            petSexo.innerHTML = data.pet.sexo;
+            petSexo.innerHTML = pet.sexo;
             card.appendChild(petSexo);
 
             let petDescricao = document.createElement("p");
-            petDescricao.innerHTML = data.pet.descricao;
+            petDescricao.innerHTML = pet.descricao;
             card.appendChild(petDescricao);
-
-/*          Colocar foto?
-            let image = document.createElement('img');
-            // image.setAttribute('src', pet.art_url);
-            image.src = pet.art_url
-            titulo.appendChild(image) */
         
             let tipo = document.createElement("p")
             titulo.appendChild(tipo)
@@ -52,6 +49,28 @@ fetch(`http://localhost:3000/clientes/${nomeDoCliente}`)
             botao.textContent = "✖";
             botao.setAttribute("data-id", pet._id)
             card.appendChild(botao)
+
+            botao.addEventListener("click", () => {
+                const thisCard = botao.parentElement;            
+                const cardPai = thisCard.parentElement;
+
+                fetch(`http://localhost:3000/clientes/removerpet/${nomeDoCliente}`, {
+                    method: 'DELETE',
+                    headers:{
+                        "Accept": "application/json",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "id": botao.getAttribute("data-id")
+                    })
+                    })
+                    .then(() =>{
+                        cardPai.removeChild(thisCard)
+                })
+                .catch((erro) =>{
+                    console.log(erro)
+                })
+            })
         })
     })
     .catch((erro) => {

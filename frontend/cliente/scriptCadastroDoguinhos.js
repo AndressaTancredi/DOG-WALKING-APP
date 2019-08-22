@@ -49,7 +49,7 @@ button.addEventListener("click", (evento) => {
     })
     .then((data) => {
         console.log(data);
-        window.location.href=`./clientePerfil.html`
+        window.location.href=`clientePerfil.html?name=${clienteName}`
     })
     .catch((erro) => {
         console.log(erro)
