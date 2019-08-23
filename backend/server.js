@@ -71,9 +71,7 @@ servidor.post('/clientes/adicionarpet/:clienteName', (request, response) => {
 //DELETE clientes
 servidor.delete('/clientes/:id', (request, response) => {
   controller.removeCliente(request.params.id)
-  
   .then(pet => {
-    console.log(error);
     
     if(pet === null || pet === undefined){
       response.sendStatus(404) 
@@ -112,6 +110,27 @@ servidor.post('/passeador', (request, response) => {
         response.sendStatus(500)
       }
     })
+})
+
+//DELETE passeadorees
+servidor.delete('/passeadores/:id', (request, response) => {
+  controller.removePasseador(request.params.id)
+  .then(passeador => {
+    
+    if(passeador === null || passeador === undefined){
+      response.sendStatus(404) 
+    } else {
+      response.sendStatus(204)
+    }
+  })
+  .catch(error => {
+    console.log(error)
+    if(error.name === "CastError"){
+      response.sendStatus(400) 
+    } else {
+      response.sendStatus(500)
+    } 
+  })
 })
 
 servidor.listen(PORT)

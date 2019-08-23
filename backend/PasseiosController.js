@@ -26,15 +26,11 @@ const addPet = async (clienteName, pet) => {
 }
 
 const removeCliente = async (id) => {
-  ClienteModel.findByIdAndRemove(id, (error, data)=>{
-    if(error){
-        console.log("error in deleting yo!");
-        throw error;
-    } else {
-        console.log("data all gone and deleted yo");
-        response.status(204);
-    }
-});
+  return ClienteModel.findByIdAndDelete(id)
+}
+
+const removePasseador = async (id) => {
+  return PasseadorModel.findByIdAndDelete(id)
 }
 
 const addPasseador = (passeador) => {
@@ -56,5 +52,5 @@ module.exports = {
   removeCliente,
   addPasseador,
   getPasseadores,
-
+  removePasseador
 }
