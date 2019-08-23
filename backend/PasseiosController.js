@@ -25,16 +25,17 @@ const addPet = async (clienteName, pet) => {
   return passeio.save()
 }
 
-ClienteModel.findByIdAndRemove(id, (error, data)=>{
-  if(error){
-      console.log("error in deleting yo!");
-      throw error;
-  } else {
-      console.log("data all gone and deleted yo");
-      response.status(204);
-
-  }
+const removeCliente = async (id) => {
+  ClienteModel.findByIdAndRemove(id, (error, data)=>{
+    if(error){
+        console.log("error in deleting yo!");
+        throw error;
+    } else {
+        console.log("data all gone and deleted yo");
+        response.status(204);
+    }
 });
+}
 
 const addPasseador = (passeador) => {
   const novoPasseador = new PasseadorModel(passeador)
