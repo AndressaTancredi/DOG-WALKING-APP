@@ -7,7 +7,7 @@ function connect () {
     { useNewUrlParser: true },
     function (error) {
       if(error) {
-        console.error("Algo de errado não está certo: ", error)
+        console.error("Algo de errado não está certo!! Arruma isso! ", error)
       } else {
         console.log("Conectado no mongoDB.")
       }

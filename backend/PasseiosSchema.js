@@ -36,7 +36,8 @@ const PasseadorSchema = new Schema({
   bairro: { type: String },
   rua: { type: String },
   numero: { type: Number },
-  complemento: { type: String }
+  complemento: { type: String },
+  descricao: { type: String }
 })
 
 const ClienteModel = mongoose.model("clientes", ClienteSchema);

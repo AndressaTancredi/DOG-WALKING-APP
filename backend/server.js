@@ -9,17 +9,17 @@ servidor.get('/', (request, response) => {
   response.send('Olá, Doguinhos!')
 })
 
-servidor.disable('etag'); //Verificar etag
+servidor.disable('etag');
 servidor.use(cors())
 servidor.use(bodyParser.json())
 
-//GET de Clientes - Funcionando BACK e FRONT
+//GET clientes
 servidor.get('/clientes', async (request, response) => {
   controller.getClientes()
     .then(cliente => response.send(cliente))
 })
 
-//POST de Clientes - Funcionando BACK e FRONT
+//POST clientes
 servidor.post('/clientes', (request, response) => {
   
   controller.addCliente(request.body)
@@ -37,7 +37,7 @@ servidor.post('/clientes', (request, response) => {
     })
 })
 
-//GET de Clientes por Nome - Funcionando BACK
+//GET clientes por nome
 servidor.get('/clientes/:nomeDoCliente',(request, response) => {
   controller.getByName(request.params.nomeDoCliente)
     .then(passeio => response.send(passeio))
@@ -50,7 +50,7 @@ servidor.get('/clientes/:nomeDoCliente',(request, response) => {
   })
 })
 
-//POST de Pets dentro do cliente - Funcionando BACK e FRONT
+//POST pets dentro de clientes
 servidor.post('/clientes/adicionarpet/:clienteName', (request, response) => {
   const clienteName = request.params.clienteName
   controller.addPet(clienteName, request.body)
@@ -68,29 +68,36 @@ servidor.post('/clientes/adicionarpet/:clienteName', (request, response) => {
   })
 }) 
 
-//DELETE Pet - Funcionando 
-servidor.delete('/clientes/removerpet/:clienteName', (request, response) => {
-  const clienteName = request.params.clienteName
-  controller.removePet(clienteName, request.body)
-    .then(pets=> {
-      const nomeDoCliente = pets.nomeDoCliente
-      response.remove({ nomeDoCliente })
-      if(pets === null || pets === undefined){ // if(!pergunta) 
-        response.sendStatus(404) // not found
-      } else {
-        response.sendStatus(204)
-      }
-    })
-    .catch(error => {
-      if(error.name === "CastError"){
-        response.sendStatus(400) //bad request
-      } else {
-        response.sendStatus(500)
-      } 
-    })
+//DELETE clientes
+servidor.delete('/clientes/:id', (request, response) => {
+  controller.removeCliente(request.params.id)
+  
+  .then(pet => {
+    console.log(error);
+    
+    if(pet === null || pet === undefined){
+      response.sendStatus(404) 
+    } else {
+      response.sendStatus(204)
+    }
+  })
+  .catch(error => {
+    console.log(error)
+    if(error.name === "CastError"){
+      response.sendStatus(400) 
+    } else {
+      response.sendStatus(500)
+    } 
+  })
 })
 
-//POST Passeador - Funcionando BACK e FRONT
+//GET passeadores
+servidor.get('/passeadores', async (request, response) => {
+  controller.getPasseadores()
+    .then(passeadores => response.send(passeadores))
+})
+
+//POST passeadores
 servidor.post('/passeador', (request, response) => {
   console.log("Cadastro Criado!");
   controller.addPasseador(request.body)
@@ -105,12 +112,6 @@ servidor.post('/passeador', (request, response) => {
         response.sendStatus(500)
       }
     })
-})
-
-//GET de Passeadores - Funcionando BACK
-servidor.get('/passeadores', async (request, response) => {
-  controller.getPasseadores()
-    .then(passeadores => response.send(passeadores))
 })
 
 servidor.listen(PORT)

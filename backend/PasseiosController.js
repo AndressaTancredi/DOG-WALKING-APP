@@ -1,7 +1,7 @@
 const { connect } = require('./PasseiosRepository')
 const  { ClienteModel, PetModel, PasseadorModel } = require('./PasseiosSchema')
 
-connect() //Conecta no mongoDB
+connect()
 
 const getClientes = () => {
   return ClienteModel.find((error, cliente) => {
@@ -16,7 +16,7 @@ const addCliente = (cliente) => {
 
 const getByName = (nomeDoCliente) => {
   return ClienteModel.findOne({nome: nomeDoCliente })
-  }
+}
 
 const addPet = async (clienteName, pet) => {
   const passeio = await getByName(clienteName)
@@ -25,17 +25,16 @@ const addPet = async (clienteName, pet) => {
   return passeio.save()
 }
 
-const removePet = async (clienteName, _id) => {
-  const passeio = await getByName(clienteName)
-  PetModel.findByIdAndDelete(_id)
-  passeio.pet.remove(_id)
-  return passeio.save()
+ClienteModel.findByIdAndRemove(id, (error, data)=>{
+  if(error){
+      console.log("error in deleting yo!");
+      throw error;
+  } else {
+      console.log("data all gone and deleted yo");
+      response.status(204);
 
-}
-
-/* const remove = (id) => {
-  return PetModel.findByIdAndDelete(id)
-} */
+  }
+});
 
 const addPasseador = (passeador) => {
   const novoPasseador = new PasseadorModel(passeador)
@@ -53,7 +52,8 @@ module.exports = {
   addCliente,
   getByName,
   addPet,
-  removePet,
+  removeCliente,
   addPasseador,
-  getPasseadores
+  getPasseadores,
+
 }

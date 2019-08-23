@@ -2,6 +2,7 @@ const cep = document.getElementById("cep");
 
 //Get CEP
 cep.addEventListener("focusout", () =>{
+
     console.log("FOCUS OUT")
 
     let cepVal = cep.value
@@ -23,7 +24,14 @@ cep.addEventListener("focusout", () =>{
     })
 })
 
-// Validação cadastro
+/* Validação cadastro
+Email regras:
+1- Não pode ser vazio
+2- Colocar foco na caixa de email
+3- Não pode começar com @
+
+Senha regras:
+1- Não pode ser vazio nem menor que 6 digitos */
 
 var mensagemEmail = document.querySelector('#emailHelp');
 var mensagemSenha= document.querySelector('#senhalHelp');
@@ -49,22 +57,9 @@ botao.addEventListener('click',function(evento){
     }
     mensagemSenha.textContent = 'O email '+ email.value +' foi cadastrado com sucesso!'
     event.defaultPrevented();
-    
-
-
-//clicar no botão e ir para a proxima pagina
-
-/* Login
-Email regras:
-1- Não pode ser vazio
-2- Colocar foco na cai de email
-3- Não pode começar com @
-
-Senha regras:
-1- Não pode ser vazio nem menor que 6 digitos */
 
 //Post cadastro clientes:
-fetch(`http://localhost:8080/salas/adicionarperguntas/${salaName}`,  {
+fetch(`http://localhost:8080/salas/adicionarperguntas/${salaName}`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

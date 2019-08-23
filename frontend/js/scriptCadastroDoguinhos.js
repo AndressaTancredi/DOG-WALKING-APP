@@ -15,7 +15,7 @@ fetch(`http://localhost:3000/clientes/${nomeDoCliente}`)
         console.log(erro)
 })
 
-//Fetch que cria lista de perguntas
+//POST do pet
 let button = document.getElementById("botao");
 
 button.addEventListener("click", (evento) => {
@@ -28,8 +28,7 @@ button.addEventListener("click", (evento) => {
     let sexo = document.getElementById("exampleInputSexo1").value;
     let descricao = document.getElementById("exampleFormControlTextarea1").value;
 
-
-    fetch(`http://localhost:3000/clientes/adicionarpet/${clienteName}`,  {
+    fetch(`http://localhost:3000/clientes/adicionarpet/${clienteName}`,{
         method: 'POST',
         headers: {
             'Accept': 'application/json',

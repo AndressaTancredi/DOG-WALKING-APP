@@ -1,13 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=ABeeZee&display=swap");
-* {
-
-}
 h1{
   margin-top: 60px;
   padding: 20px;
   font-size: 65px !important;
 }
-
 .form-group-home-user{
   padding-left: 100px;
   padding-bottom: 0px;
@@ -59,7 +55,6 @@ header a {
   color:  #367dda;
   font-family: 'ABeeZee';  
   font-size: 18px;
-  
 }
 .cliente{
   color:  #367dda;
@@ -95,9 +90,6 @@ header .container .col-md-7 h1 {
 header .container .col-md-7 p {
   padding: 1vmin 5vmin;
 }
-/* .navbar-brand{
-  font-size: 35px;
-} */
 .btn{
   color: #f0f4f8;
   background-color: rgb(53, 94, 182);
@@ -118,7 +110,6 @@ header .container .col-md-7 p {
 .card-title{
   color: rgb(53, 94, 182);
   font-weight: bold
-  
 }
 .col{
   width: 100%;
@@ -132,7 +123,6 @@ header .container .col-md-7 p {
   padding: 100px;
 }
 footer {
-  
   margin-bottom: 0px; 
   background: rgba(29, 28, 28, 0.815);
   overflow-x: hidden;
