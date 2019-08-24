@@ -66,7 +66,7 @@ botao.addEventListener('click',function(evento){
     let endereco = document.getElementById("endereco").value; 
     let numero = document.getElementById("num").value; 
     let complemento = document.getElementById("comp").value; 
-    let descricao = document.getElementById("textArea").value; 
+    let descricao = document.getElementById("exampleFormControlTextarea1").value; 
 
     fetch(`http://localhost:3000/passeador`,  {
         method: 'POST',
