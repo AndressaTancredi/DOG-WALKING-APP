@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DOGuinho</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/stylePasseador.css" />
+    <link rel="shortcut icon" href="../img/dog.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar1 container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #f0f4f8;">
+          <a class="navbar-brand" href="../index.html">PasseiaDOG</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+        <div class="container1">
+            <div class="row">
+              <div class="col">
+      <form class="form1">
+        <div class="form-group">
+          <label for="exampleInputNome">Nome completo</label>
+          <input type="name" class="form-control" id="exampleInputNome" >
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre com seu email">
+          <small id="emailHelp" class="form-text text-muted">Nós não vamos compartilhar seu e-mail com ninguém.</small>
+          <label for="exampleInputPassword1">Senha</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Escreva sua senha">
+          <small id="senhalHelp" class="form-text text-muted">Deve conter no mínimo 6 caracteres</small>
+        </form>
+        <form class="form" method="POST">
+          <label for="cep">CEP</label>
+          <input type="number" name="cep" id="cep" />
+          <label for="estado">Estado</label>
+          <input type="text" name="estado" id="estado" disabled />
+          <label for="cidade">Cidade</label>
+          <input type="text" name="cidade" id="cidade" disabled />
+          <label for="bairro">Bairro</label>
+          <input type="text" name="bairro" id="bairro" disabled  />
+          <label for="endereco">Endereço</label>
+          <input type="text" name="endereco" id="endereco" disabled />
+          <label for="num">Num.</label>
+          <input type="number" name="bairro" id="num" />
+          <label for="comp">Complemento</label>
+          <input type="text" name="endereco" id="comp" /> 
+          <br>
+          <label for="exampleFormControlTextarea1" id="textArea">Descrição - Nos conte um pouco sobre sua história e porque você seria um bom passeador. É sua chance de fazer seu cliente te conhecer.</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </form>
+        <a href="./dashboardPasseador.html"></a><button type="button" class="btn btn-info">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </main>
+    <footer>
+      <div class="container-fluid p-0">
+        <div class="row text-left">
+          <div class="col-md-6 col-sm-4">
+            <h5 class="text-light">PasseiaDOG </h5>
+            <p class="text-muted">Ajudando seu melhor amigo à explorar o mundo. <br> Criado por Andressa Tancredi ©2019 </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <script src="../js/scriptCadastroPasseador.js"></script>
+  </body>
+</html>
