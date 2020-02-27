@@ -1,4 +1,4 @@
-# Dog
+# Passeia Dog
 Projeto de desenvolvimento de um novo serviço de passeadores de cães.
 
 * Para executar:
