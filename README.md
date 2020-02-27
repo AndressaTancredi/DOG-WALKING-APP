@@ -2,10 +2,15 @@
 Projeto de desenvolvimento de um novo serviço de passeadores de cães.
 
 * Para executar:
+
 1 - Com o NodeJS e MongoDB instalados, clone este repositório através do git.
+
 2 - No prompt de comando, entre na pasta da aplicação e execute os seguintes comandos:
+
 npm install
+
 node server.js
+
 3 - Para acessar a aplicação, abra o navegador e acesse o endereço:
 localhost:3000
 
