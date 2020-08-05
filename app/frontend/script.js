@@ -59,7 +59,7 @@ botao.addEventListener('click',function(evento){
     event.defaultPrevented();
 
 //Post cadastro clientes:
-fetch(`http://localhost:8080/salas/adicionarperguntas/${salaName}`, {
+fetch(`http://localhost:3000/salas/adicionarperguntas/${salaName}`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
