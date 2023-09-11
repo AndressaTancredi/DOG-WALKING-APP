@@ -1,6 +1,10 @@
 # DOG WALKING
 Development project for a new dog walker service.
 
+Access the link = > [Dog Walking Link](https://andressatancredi.github.io/Projeto-Doguinho/)
+
+![Screenshot 2023-09-11 at 18 41 16](https://github.com/AndressaTancredi/Projeto-Doguinho/assets/48730376/3ee3c9d7-be24-4a5a-9d5a-4fb56211a061)
+
 ## Getting Started
 
 To run the project, you'll need Node.js and MongoDB installed. Follow these steps:
