@@ -1,38 +1,41 @@
-# Passeia Dog
-Projeto de desenvolvimento de um novo serviço de passeadores de cães.
+# DOG WALKING
+Development project for a new dog walker service.
 
-* Para executar:
+## Getting Started
 
-1 - Com o NodeJS e MongoDB instalados, clone este repositório através do git.
+To run the project, you'll need Node.js and MongoDB installed. Follow these steps:
 
-2 - No prompt de comando, entre na pasta da aplicação e execute os seguintes comandos:
+1. Clone this repository using Git.
 
-npm install
+2. In your command prompt, navigate to the project folder and execute the following commands:
+   
+         npm install
+         node server.js
 
-node server.js
+  To access the application, open your web browser and visit:
+  http://localhost:3000
 
-3 - Para acessar a aplicação, abra o navegador e acesse o endereço:
-localhost:3000
+### User Registration
 
-* Para passear criar um cadastro como cliente:
+To book a dog walker, create a customer account:
 
-Clique em entrar e complete o cadastro.
+  Click "Sign In" and complete the registration process.
 
-* Para cadastrar seu cão:
+### Adding Your Dog
 
-Complete o cadastro da próxima página.
+Complete your pet's registration on the following page.
 
-* Você verá uma tela com seu pet cadastrado e abaixo uma lista de passeadores cadastrados (cadastre um passeador e atualize a página)
+You will then see a screen displaying your registered pet, along with a list of available dog walkers. (Please register a dog walker and refresh the page if no walkers appear).
+Registering as a Dog Walker
 
-* Para cadastrar um passeador
+### To become a dog walker, follow these steps:
 
-Clique em entrar e complete o cadastro. 
+  Click "Sign In" and complete the registration process.
 
-### Stack: ###
+### Stack
 
-`HTML/CSS | Bootstrap | JavaScript`
+  Frontend: HTML/CSS, Bootstrap, JavaScript
+  Backend: Node.js v10.15.3, MongoDB
+  Packages: Refer to package.json
 
-`NodeJS v10.15.3 | MongoDB | Pacotes listados em package.json.`
-
-### Autora: ### 
-Andressa Tancredi - Agosto de 2019
+Made with ❤ by Andressa Tancredi.
